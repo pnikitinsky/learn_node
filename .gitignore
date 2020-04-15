@@ -19,6 +19,7 @@
 # React on Rails
 npm-debug.log*
 node_modules
+mongo_volume
 
 # Generated js bundles
 /app/assets/javascripts/generated/*
