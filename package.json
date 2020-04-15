@@ -1,0 +1,24 @@
+{
+  "name": "learn_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon --exec babel-node app.js"
+  },
+  "author": "Pavel Nikitinskiy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "express-graphql": "0.9.0",
+    "graphql": "15.0.0",
+    "mongoose": "5.9.9"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "1.7.0",
+    "nodemon": "2.0.3"
+  }
+}
