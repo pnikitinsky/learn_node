@@ -12,7 +12,7 @@ const {
 
 const app = Express()
 
-mongoose.connect('mongodb://localhost/learn_node')
+mongoose.connect('mongodb://mongo:27017/learn_node')
 
 const personModelSchema = new mongoose.Schema({
   lastname: String,
@@ -40,7 +40,7 @@ const schema = new GraphQLSchema({
     fields: {
       people: {
         type: GraphQLList(PersonType),
-        resolve: (root, args, context, info) => {
+        resolve: (_root, _args, _context, _info) => {
           return PersonModel.find().exec();
         }
       },
@@ -49,7 +49,7 @@ const schema = new GraphQLSchema({
         args: {
           id: { type: GraphQLNonNull(GraphQLID) }
         },
-        resolve: (root, args, context, info) => {
+        resolve: (root, args, _context, _info) => {
           return PersonModel.findById(args.id).exec();
         }
       }
@@ -64,7 +64,7 @@ const schema = new GraphQLSchema({
           firstname: { type: GraphQLNonNull(GraphQLString) },
           lastname: { type: GraphQLNonNull(GraphQLString) }
         },
-        resolve: (root, args, context, info) => {
+        resolve: (root, args, _context, _info) => {
           const person = new PersonModel(args)
           return person.save();
         }
@@ -84,5 +84,5 @@ app.listen(3000, () => {
 
 
 app.get('/', (req, res) => {
-  res.send('hello world')
+  res.send('hello world1')
 })
